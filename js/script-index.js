@@ -1,5 +1,8 @@
 $(document).ready( function(){
 
+/*
+* Etapa 1
+*/
   $(".js-back").css("display", "none");
 
     $("#explore-recipes").click(function(e){
@@ -7,8 +10,15 @@ $(document).ready( function(){
        window.location.href="recipe.html";
     })
 
+/*
+* Etapa 2
+*/
 
+  function printNews(){
+    $("#printNews").html("NUEVAS RECETAS");
+  };
 
+  printNews();
 
 
 
