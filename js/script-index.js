@@ -1,5 +1,21 @@
 $(document).ready( function(){
 
+  $(".js-back").css("display", "none");
+
+    $("#explore-recipes").click(function(e){
+       e.preventDefault();
+       window.location.href="recipe.html";
+    })
+
+
+
+
+
+
+
+
+
+
 	//La variable "recipesArray" esta declarada en el archivo "data/recipes.js"
 	renderHighlightedRecipes(recipesArray);
 
@@ -41,5 +57,6 @@ function renderActivities(activitiesArray) {
 function renderActivity(recipe) {
 	
 }
+
 
 
