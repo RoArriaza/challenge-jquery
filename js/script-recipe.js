@@ -5,6 +5,13 @@ $(document).ready(function(){
 
 console.log("Hola!")
 
+  $(".js-back").click(function(){
+      window.location.href="index.html";
+    });
+
+      
+
+  
   $(".js-show-recipe").click(function(){
     $("#divMake").removeClass("make");
     $(this).addClass("active");
@@ -18,7 +25,6 @@ console.log("Hola!")
     $(this).addClass("active");
     $(".js-show-recipe").removeClass("active");
   });
-
 
 
 
