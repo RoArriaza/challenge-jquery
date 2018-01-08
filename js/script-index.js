@@ -18,15 +18,23 @@ $(document).ready( function(){
     $("#printNews").html("NUEVAS RECETAS");
   };
 
+
+
   printNews();
+
+
+    //La variable "recipesArray" esta declarada en el archivo "data/recipes.js" ¡LLAMADA DE FUNCIÓN!
+  renderHighlightedRecipes(recipesArray);
+
+  //Paso 5
+  renderActivities(activitiesArray);
 
  });
 /*
 * Etapa 3
 */
  
-  //La variable "recipesArray" esta declarada en el archivo "data/recipes.js" ¡LLAMADA DE FUNCIÓN!
-	renderHighlightedRecipes(recipesArray);
+
 
 /*
 * Función que se encarga de pintar TODAS las recetas que tengan 
@@ -77,6 +85,19 @@ function renderRecipe(recipe) {
 */
 function renderActivities(activitiesArray) {
 	console.log('Activities: ', activitiesArray);
+
+    if(activitiesArray.length > 0){
+      $(".wrapper-message").hide();
+  }
+
+
+
+
+
+
+
+
+
 }
 
 /*
