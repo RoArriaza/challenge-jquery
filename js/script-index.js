@@ -20,17 +20,13 @@ $(document).ready( function(){
 
   printNews();
 
-
-
-
-
-
-
-	//La variable "recipesArray" esta declarada en el archivo "data/recipes.js"
+ });
+/*
+* Etapa 3
+*/
+ 
+  //La variable "recipesArray" esta declarada en el archivo "data/recipes.js" ¡LLAMADA DE FUNCIÓN!
 	renderHighlightedRecipes(recipesArray);
-
-});
-
 
 /*
 * Función que se encarga de pintar TODAS las recetas que tengan 
@@ -38,7 +34,16 @@ $(document).ready( function(){
 */
 function renderHighlightedRecipes(recipesArray) {
 	console.log('Recipes: ', recipesArray);
+
+  for(var i=0; i<recipesArray.length; i++){
+    if(recipesArray[i].highlighted === true){
+      renderRecipe(recipesArray[i]);
+  }
+
 }
+
+};
+
 
 /*
 * Función que se encarga de pintar UNA recetas que tenga 
@@ -67,6 +72,8 @@ function renderActivities(activitiesArray) {
 function renderActivity(recipe) {
 	
 }
+
+
 
 
 
