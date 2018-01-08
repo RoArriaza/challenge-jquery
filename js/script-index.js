@@ -61,11 +61,14 @@ function renderHighlightedRecipes(recipesArray) {
 */
 function renderRecipe(recipe) {
     console.log('Voy a pintar la receta: ', recipe);
+
     var titleRecipe = recipe.title;
     var authorRecipe = recipe.source.name;
     var imgRecipe = recipe.img;
+
     console.log(titleRecipe);
     console.log(authorRecipe);
+
     $(".list-recipes").append("<a class='item-recipe' href='#'>"+
                              "<span class='attribution'>"+
                              "<span class='title-recipe'>"+titleRecipe+"</span>"+
@@ -86,15 +89,13 @@ function renderRecipe(recipe) {
 function renderActivities(activitiesArray) {
 	console.log('Activities: ', activitiesArray);
 
+    for(var i=0; i < activitiesArray.length;i++){
+      renderActivity(activitiesArray[i]);
+    }
+
     if(activitiesArray.length > 0){
       $(".wrapper-message").hide();
   }
-
-
-
-
-
-
 
 
 
@@ -105,9 +106,32 @@ function renderActivities(activitiesArray) {
 * Aqui se tiene que crear el HTML que esta en el 
 * archivo "templates/templates-activity.html"
 */
-function renderActivity(recipe) {
-	
-}
+function renderActivity(activity) {
+	console.log("Entre");
+  var authorFirst = activity.userName;
+  console.log(authorFirst);
+  var recipeName = activity.recipeName;
+  var textRecipe = activity.text;
+  var userPlace = activity.place;
+  var userAvatar = activity.userAvatar;
+  var imagen = activity.image;
+
+    $(".list-activities").append("<a href='#' class='item-activity'>"+
+                              "<span class='attribution'>"+
+                              "<span class='avatar'>"+ 
+                              "<img src='"+userAvatar+"' class='image-avatar'>"+
+                              "</span>"+"<span class='meta'>"+
+                              "<span class='author'>"+ "&nbsp;" + authorFirst + "&nbsp;" +"</span> made"+
+                              "<span class='recipe'>" + "&nbsp;" + recipeName + "&nbsp;" +"</span>:" + "&nbsp;" + textRecipe  + "&nbsp;"+
+                              "<span class='location'>" + "&mdash;" + userPlace + "</span>"+
+                              "</span>"+
+                              "</span>" +
+                              "<div class='bg-image' style='background-image: url(" + imagen + ");'></div>"+"</a>")
+
+
+
+
+};
 
 
 
